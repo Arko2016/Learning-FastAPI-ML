@@ -7,5 +7,10 @@ It's primarily built on top of 2 Python libraries:
 
 ## USP of FastAPI:
 1. Fast to Run
-    -  
+ 
+<img width="642" height="812" alt="fastapi pic 1" src="https://github.com/user-attachments/assets/f222d7e0-98b9-427b-b511-1db7c4b22c89" />
+
 2. Fast to Code
+    - Automatic Input validation -> through Pydantic
+    - Auto-generated interactive documentation
+    - Seamless integration with modern MLOps/DevOps ecosystem (Docker, Kubernetes, ML libraries)
