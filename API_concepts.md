@@ -22,6 +22,7 @@ Frequent deployments are challenging due to the need to redeploy the entire appl
 Decoupling the backend from frontend allows the governing body to set multiple constraints which can prevent unwanted use or corruption of backend from external applications
 
 APIs are mechanisms that enable 2 software components, such as Frontend and Backend of an application, to communicate with each other using set of rules, protocols and data formats
+
 <img width="563" height="234" alt="api pic 2 drawio" src="https://github.com/user-attachments/assets/2c179f02-d989-4d2a-b605-8216c1ab9c29" />
 
 *NOTE:* While client sends data to API through HTTP requests, the final output from API as it returns response is in the form of json files so that it can be interpreted by any frontend application code (Python, JAVA, PHP, etc.)
