@@ -17,5 +17,6 @@ Integrating new technologies into a monolithic application or even small code ch
 Frequent deployments are challenging due to the need to redeploy the entire application
 
 ### API (Application Programming Interface)
-<img width="442" height="510" alt="API pic 1 drawio" src="https://github.com/user-attachments/assets/05a06880-0e04-433b-89ff-a953f759ae00" />
+<img width="725" height="510" alt="api pic 1 drawio" src="https://github.com/user-attachments/assets/d1cd3efe-2f75-4d4c-bfad-0d5fb594acee" />
 
+wip
