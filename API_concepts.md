@@ -30,6 +30,7 @@ API architecture also allows to maintain a single database and backend while han
 
 ### API Machine Learning Perspective
 Similar to Software application, the central agency can build the model (such as ChatGPT model) and share it through API architecture with external applications
+
 <img width="741" height="419" alt="api 3 drawio" src="https://github.com/user-attachments/assets/3d99b98d-1d6f-4818-ae2c-3362389adf77" />
 
 
