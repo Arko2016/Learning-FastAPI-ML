@@ -15,6 +15,8 @@ It's primarily built on top of 2 Python libraries:
 While web server accepts incoming requests from client, API code helps to process the data from backend and database 
 SGI/ASGI acts as bridge which converts the HTTP requests to a json format which can be read by API code
 
+SGI and ASGI are protocols which need to be implemented using Python libraries, respectively Werkzeug (Flask) and Starlette (FastAPI)
+
 Since FastAPI is Asynchronous, it significantly enhances performance and scalability for web applications, particularly those handling many concurrent requests or I/O-bound operations. This approach allows applications to handle a higher volume of requests without blocking, leading to faster response times and improved resource utilization
 
 2. **Fast to Code**
