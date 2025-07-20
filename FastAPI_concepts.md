@@ -10,8 +10,9 @@ It's primarily built on top of 2 Python libraries:
  
 <img width="642" height="812" alt="fastapi pic 1" src="https://github.com/user-attachments/assets/f222d7e0-98b9-427b-b511-1db7c4b22c89" />
 
-Here, SGI : Synchronous Gateway Interface, ASGI: Asynchronous Gateway Interface
+*Note:* SGI : Synchronous Gateway Interface, ASGI: Asynchronous Gateway Interface
 While web server accepts incoming requests from client, API code helps to process the data from backend and database 
+SGI/ASGI acts as bridge which converts the HTTP requests to a json format which can be read by API code
 
 Since FastAPI is Asynchronous, it significantly enhances performance and scalability for web applications, particularly those handling many concurrent requests or I/O-bound operations. This approach allows applications to handle a higher volume of requests without blocking, leading to faster response times and improved resource utilization
 
