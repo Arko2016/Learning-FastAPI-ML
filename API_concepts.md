@@ -19,4 +19,11 @@ Frequent deployments are challenging due to the need to redeploy the entire appl
 ### API (Application Programming Interface)
 <img width="725" height="510" alt="api pic 1 drawio" src="https://github.com/user-attachments/assets/d1cd3efe-2f75-4d4c-bfad-0d5fb594acee" />
 
-wip
+Decoupling the backend from frontend allows the governing body to set multiple constraints which can prevent unwanted use or corruption of backend from external applications
+
+APIs are mechanisms that enable 2 software components, such as Frontend and Backend of an application, to communicate with each other using set of rules, protocols and data formats
+
+*NOTE:* While client sends data to API through HTTP requests, the final output from API as it returns response is in the form of json files so that it can be interpreted by any frontend application code (Python, JAVA, PHP, etc.)
+
+
+
