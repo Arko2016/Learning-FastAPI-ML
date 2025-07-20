@@ -26,3 +26,6 @@ Since FastAPI is Asynchronous, it significantly enhances performance and scalabi
 
 *Note:* If we want to activate virtual environment in VSCode, first set the following command:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser  
+then, to activate the virtual environment, type below command:
+.\myenv\Scripts\activate
+
