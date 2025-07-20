@@ -23,3 +23,6 @@ Since FastAPI is Asynchronous, it significantly enhances performance and scalabi
     - Automatic Input validation -> through Pydantic
     - Auto-generated interactive documentation
     - Seamless integration with modern MLOps/DevOps ecosystem (Docker, Kubernetes, ML libraries)
+
+*Note:* If we want to activate virtual environment in VSCode, first set the following command:
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser  
