@@ -2,7 +2,7 @@
 This is a 2nd example for creating a basic api
 '''
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Path
 import json
 
 #define FastAPI object
@@ -31,5 +31,19 @@ def func2():
 def func3():
     data = load_data()
     return data
+
+#get records for a specific patient using Path Parameter (which is a string in our json)
+#in view patient function, provide path functions to provide documentations to API endpoints
+#"..." indicates this is mandatory
+@app.get("/patient/{patient_id}")
+def view_patient(patient_id : str = Path(..., description = "ID of the patient in the database", example = 'P001')):
+    #load patients json containing all records
+    #Note: patients data is in json format with patient id as key
+    data = load_data()
+
+    if patient_id in data:
+        return data[patient_id]
+    return {'error':'patient id not found'}
+
 
 
