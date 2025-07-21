@@ -32,6 +32,18 @@ Similar to PUT, but it's used to *partially update* a resource. It only modifies
 5. DELETE:
 Used to remove a resource from the server
 
+## Path Parameters
+Path parameters are dynamic URL components which are used to identify specific components
+Example: localhost:8000/view/{path parameter}
+They are specificlly useful for: Retrieve, Update and Delete operations
+
+## Path function
+Path function() in FastAPI is used to provide metadata, validation rules and documentation for path parameters in API endpoints
+Eg.: Title, description, examples, min-length, max_length, regex, greater than equal to, etc.
+
+
+
+
 
 
 
