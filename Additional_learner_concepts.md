@@ -39,7 +39,46 @@ They are specificlly useful for: Retrieve, Update and Delete operations
 
 ## Path function
 Path function() in FastAPI is used to provide metadata, validation rules and documentation for path parameters in API endpoints
-Eg.: Title, description, examples, min-length, max_length, regex, greater than equal to, etc.
+Eg. of data validations that can be provided:
+Title, description, examples, min-length, max_length, regex, greater than equal to, etc.
+
+## HTTP Status code
+3-digit status code which is returned by web server (like FastAPI) to the client indicating status of the reponse for the client's request
+They help the client (frontend browser) to understand:
+- if the response was a success (usually 2xx)
+- further action needs to be taken, may be a redirect (3xx)
+- something is wrong (client error) -> 4xx
+- error on server side (5xx)
+
+examples:
+200 -> response was successful
+502 -> bad gateway, gateway with request failed to reach end
+401 -> unauthorized access, need to login
+404 -> resource doesnt exist
+
+## HTTPException
+It is a special built-in exception in FastAPI used to return custom HTTP error responses when something goes wrong in the API while handling requests
+Thus, instead of returning generic JSON responses or crashing the server, we can highlight the exact error with:
+- a proper HTTP status code (404, 502, etc.)
+- a custom error message
+- extra headers (*optional*)
+
+## Query Parameters
+Optional ke-value pairs appended to end of a URL, used to pass additional data to the server in a HTTP request.
+They are typically used for filtering, sorting data, pagination or searching operations without altering the endpoint path itself
+
+Ex.: /patient?city=Delhi&sort_by=age
+In this API call, we are asking the response data to be filtered only for Delhi city and sort by age is ascending order. 
+The '?' marks the start of query parameters, while '&' is used to separate out different query parameters
+
+*Note*: the parameters are also *optional* and the request should also work without specifying them
+
+**Query()** is a utility function under FastAPI to declare, validate and document Query parameters in API endpoints
+It allows you to:
+- set default values
+- enforce validation rules
+- add metadat like description, titles, example/references
+
 
 
 
