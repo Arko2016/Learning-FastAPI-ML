@@ -19,4 +19,5 @@ with open('patients.json','r') as f:
     filtered_data = [x for x in data.values() if x['city'].lower() == filter_value.lower()]
     print(filtered_data)
     
-    
+
+
