@@ -1,3 +1,6 @@
+'''
+This will be used to try out different methods on the input json file before including in the main file
+'''
 import json
 
 def convert_to_lower(obj,column):
