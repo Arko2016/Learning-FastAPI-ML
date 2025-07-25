@@ -92,9 +92,7 @@ def filter_patients(filter_by : str = Query(..., description='filter and display
     
     #load all records
     data = load_data()
-    #convert values in city and gender columns to lowercase for comparison
-
-
+    
     #get unique values for cities and gender
     city_list = list(set(x['city'].lower() for x in data.values()))
     gender_list = list(set(x['gender'].lower() for x in data.values()))
