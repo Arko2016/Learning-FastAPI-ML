@@ -39,6 +39,15 @@ class Patient(BaseModel):
             return 'Normal'
         else:
             return 'Obese' 
+
+#create a 2nd Pydantic object with same fields as the 1st pydantic object but optional instead of mandatory -> this will be useful for updating patient records
+class PatientUpdate(BaseModel):
+    name : Annotated[Optional[str], Field(default = None)]
+    city : Annotated[Optional[str], Field(default=None)]
+    age : Annotated[Optional[int], Field(default=None, gt = 0, lt = 120)]
+    gender : Annotated[Optional[Literal['male','female','others']], Field(default=None)]
+    height : Annotated[Optional[float], Field(default=None, gt = 0)]
+    weight : Annotated[Optional[float], Field(default=None, gt = 0)]
     
 #function to load existing patients json data#Note: open the patients json in read(r) format
 def load_data():
@@ -155,6 +164,70 @@ def create_patient(patient: Patient):
 
     #return a success http response
     return JSONResponse(status_code=201, content = {'message':'new patient record successfully created'})
+
+#api path to update existing patient record -> PUT request
+@app.put('/edit/{patient_id}')
+def update(patient_id: str, patient_update:PatientUpdate):
+
+    #load existing records
+    data = load_data()
+
+    #check if entered patient id is in the records
+    if patient_id not in data:
+        raise HTTPException(status_code=404, detail = f'Patient with id {patient_id} not found in records')
+    
+    #filter record for specified patient id
+    existing_patient_info = data[patient_id]
+
+    '''
+    since existing patient info is in dictionary format, convert the patinet update also in json format
+    
+    Note: only keep the attributes which are explicitly mentioned in the patient update request
+    '''
+    updated_patient_info = patient_update.model_dump(exclude_unset=True)
+
+    #update relevant keys in existing patient info dictionary with the updated patient info
+    for key,value in updated_patient_info.items():
+        existing_patient_info[key] = value
+    
+    '''
+    now the existing patient info will not automtically have the computed fields (such as bmi and verdict) updated 
+    Hence, need to convert the existing patient info into a pydantic model of Patient class so that the computed fields are automatically calculated 
+    '''
+
+    existing_patient_info['id'] = patient_id
+    patient_obj2 = Patient(**existing_patient_info)
+
+    #once the computed fields are updated, convert it back to dictionary
+    existing_patient_info = patient_obj2.model_dump(exclude=['id'])
+
+    #add this dictionary back to original patient records
+    data[patient_id] = existing_patient_info
+
+    #save the updated data
+    save_data(data)
+
+    #return successful http response
+    return JSONResponse(status_code=200, content={'message':'Patient record successfully updated'})
+
+#api path to delete existing patient record -> DELETE request
+@app.delete('/delete/{patient_id}')
+def delete_patient(patient_id:str):
+
+    #load data
+    data = load_data()
+
+    #check if specified patient id exists in records
+    if patient_id not in data:
+        raise HTTPException(status_code=404, detail=f'Patient id {patient_id} not found')
+    
+    #delete and save updated data
+    del data[patient_id]
+    save_data(data)
+
+    #return successful http response
+    return JSONResponse(status_code=200, content={'message':'Patient record deleted successfully'})
+
 
 
 
