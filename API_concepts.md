@@ -31,7 +31,7 @@ APIs are mechanisms that enable 2 software components, such as Frontend and Back
 In a restaurant, a **customer** looks at the menu and decides what to order -> **Frontend**
 The waiter receives the order and mentions to chef, who then prepares the food using required ingredients and the waiter then delivers the food back to customer
     In this case, **Waiter -> API, Ingredients -> Database, Chef -> Backend**
-In **Synchronous architecture**, once 1 order is placed, the waiter waits till the processed food is delivered before accepting another order. However i **Asynchronous archotecture**, while the food is getting prepared for 1 order, the waiter can receive request for other orders, thus **serving multiple customers** at the same time
+In **Synchronous architecture**, once 1 order is placed, the waiter waits till the processed food is delivered before accepting another order. However in **Asynchronous archotecture**, while the food is getting prepared for 1 order, the waiter can receive request for other orders, thus **serving multiple customers** at the same time
 
 
 
