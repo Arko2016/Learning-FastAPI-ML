@@ -24,8 +24,13 @@ Since FastAPI is Asynchronous, it significantly enhances performance and scalabi
     - Auto-generated interactive documentation
     - Seamless integration with modern MLOps/DevOps ecosystem (Docker, Kubernetes, ML libraries)
 
-*Note:* If we want to activate virtual environment in VSCode, first set the following command:
+*Note:* 
+If we want to activate virtual environment in VSCode, first set the following command:
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser  
-then, to activate the virtual environment, type below command:
-.\myenv\Scripts\activate
+then, to activate the virtual environment, type below commands:
+1. python -m venv myenv <or whatever name you want to call your virtual environment>
+2. .\myenv\Scripts\activate
+
+Do the above steps before starting a project to avoid problems
+
 
