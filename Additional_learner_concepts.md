@@ -77,7 +77,7 @@ The '?' marks the start of query parameters, while '&' is used to separate out d
 It allows you to:
 - set default values
 - enforce validation rules
-- add metadat like description, titles, example/references
+- add metadata like description, titles, example/references
 
 
 
