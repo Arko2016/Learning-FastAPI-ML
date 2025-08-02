@@ -39,4 +39,10 @@ In FastAPI, a response model defined the structure of the output data that the A
 2. Similar to User Input, the Output is now validated (incorrect responses are not handled efficiently)
 3. Filtering unnecessary data from Response
 
+## Additional Tip:
+To get all the installed packages in an environment and write them in a requirements file:
+```python
+pip freeze > requirements.txt
+```
+
 
