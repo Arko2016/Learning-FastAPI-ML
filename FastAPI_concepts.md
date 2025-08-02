@@ -33,4 +33,10 @@ then, to activate the virtual environment, type below commands:
 
 Do the above steps before starting a project to avoid problems
 
+## What is a Repsonse Model in FastAPI:
+In FastAPI, a response model defined the structure of the output data that the API will return. Advantages:
+1. The generated API/docs becomes more clean
+2. Similar to User Input, the Output is now validated (incorrect responses are not handled efficiently)
+3. Filtering unnecessary data from Response
+
 
